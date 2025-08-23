@@ -7,16 +7,24 @@ import { TextLoader } from "langchain/document_loaders/fs/text";
 import OpenAI from "openai";
 import { QdrantClient } from "@qdrant/js-client-rest";
 import fs from 'fs-extra'
+import path from "path";
+import { Document } from "@langchain/core/documents";
 import Video from '../models/video.models.js';
-import Course from '../models/course.models';
-import Chapter from '../models/chapter.models';
+import Course from '../models/course.models.js';
+import Chapter from '../models/chapter.models.js';
 
 export const uploadVtts = async (req,res)=>{
     try {
         const {courseId , chapterId} = req.body;
         const uploadedVTTS = req.files; 
-        uploadVtts.array.forEach(async(element) => {
-            const filePath = element.path;
+        if (!uploadedVTTS || uploadedVTTS.length === 0) {
+            return res.status(400).json({
+                success: false,
+                message: "No VTT files uploaded"
+            });
+        }
+        for(const element of uploadedVTTS){
+             const filePath = element.path;
             const loader = new TextLoader(filePath);
             const docs = await loader.load();
             const splitter = new RecursiveCharacterTextSplitter({
@@ -35,7 +43,7 @@ export const uploadVtts = async (req,res)=>{
             })
             if(!newVideo){
                 return res.status(400).json({
-                    success : 'false',
+                    success : false,
                     message : 'Failed to create new Video vtt'
                 })
             }
@@ -44,21 +52,22 @@ export const uploadVtts = async (req,res)=>{
             const chapter = await Chapter.findById(chapterId);
             const chapterName= chapter.title;
             const documents = chunks.map(chunk => new Document({
-                pageContent: {content :chunk.pageContent,course : courseName , chapterName : chapterName },
-               
-            }));
+                pageContent: chunk.pageContent,
+                metadata: {
+                    course: courseName,
+                    chapter: chapterName,
+                    videoTitle: path.parse(element.originalname).name,
+                },
+                }));
+            
             const vectorStore = await QdrantVectorStore.fromDocuments(documents , embeddings, {
-                url: process.env.QUADRANT_URL,
-                apiKey: process.env.QUADRANT_API_KEY,
+                url: process.env.QDRANT_URL,
+                apiKey: process.env.QDRANT_API_KEY,
                 collectionName: 'Chai-Subtitles',
             });
 
             await fs.promises.unlink(filePath);
-
-            
-
-
-        });
+        }
         return res.status(200).json({
             success:true , 
             message:'VTT files indexed successfully'
