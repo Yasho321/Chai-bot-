@@ -3,7 +3,6 @@ const { Schema } = mongoose;
 
 const courseSchema = new Schema({
   title: { type: String, required: true },
-  description: { type: String },
   chapters: [{ type: Schema.Types.ObjectId, ref: "Chapter" }],
 }, { timestamps: true });
 

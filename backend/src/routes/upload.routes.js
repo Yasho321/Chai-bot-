@@ -1,16 +1,15 @@
 import {Router } from 'express';
 import { isLoggedIn , isAdmin} from '../middlewares/auth.middlewares.js';
 
-import { uploadChapter, uploadCourse, uploadVideo } from '../controllers/upload.controllers.js';
-
+import {  uploadVtts } from '../controllers/upload.controllers.js';
+import { uploadMany } from '../utils/multer.js';
 
 
 
 const router = Router();
 
-router.post("/course", isLoggedIn ,isAdmin , uploadCourse)
-router.post("/chapter/:course", isLoggedIn, isAdmin ,  uploadChapter)
-router.post("/video/:chapter/:course", isLoggedIn,isAdmin, uploadVideo)
+
+router.post("/video/:chapter/:course", isLoggedIn,isAdmin, uploadMany,uploadVtts)
 
 
 

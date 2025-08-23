@@ -22,11 +22,8 @@ export const register = async (req, res) => {
 
 
 
-        const user = await User.findOne({
-            where: {
-                email: email
-            }
-        })
+        const user = await User.findOne({ email });
+
 
         if(user){
             return res.status(400).json({
@@ -35,11 +32,19 @@ export const register = async (req, res) => {
             })
 
         }
+        let role ;
+
+        if(email ===process.env.ADMIN_EMAIL){
+            role='admin';
+        }else{
+            role='user';
+        }
 
         const newUser = await User.create({
             name: name,
             email : email,
-            password: hashedPassword
+            password: hashedPassword ,
+            role
         })
 
         if(!newUser){
@@ -184,8 +189,15 @@ export const getMe = async (req, res) => {
 }
 export const logout = async (req, res) => {
      try {
+        const cookiesOption = {
+            httpOnly: true,
+            expires: new Date(Date.now() + 7 * 24 * 60 * 60*1000),
+             secure : true,
+            sameSite : "None",
+            domain : ".vercel.app"
+        }
         
-        res.clearCookie("token");
+        res.clearCookie("token",cookiesOption);
         
         return res.status(200).json({
             success : true ,
