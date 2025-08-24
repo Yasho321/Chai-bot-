@@ -63,7 +63,7 @@ const LoginForm = ({ onToggleMode }) => {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="admin@adm.in"
+                    placeholder="xyz@gmail.com"
                     value={formData.email}
                     onChange={handleChange}
                     className="pl-10"

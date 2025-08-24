@@ -100,7 +100,7 @@ const ChatInterface = () => {
           )}
         </Card>
         <div className={`text-xs text-muted-foreground mt-1 ${isUser ? 'text-right' : 'text-left'}`}>
-          {isUser ? 'You' : 'VTT Buddy'}
+          {isUser ? 'You' : 'Chai Bot'}
         </div>
       </div>
 
