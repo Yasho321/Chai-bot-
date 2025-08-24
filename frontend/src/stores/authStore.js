@@ -30,10 +30,11 @@ export const useAuthStore = create((set) => ({
       const response = await axiosInstance.post('/auth/login', credentials);
       
       if (response.data.success) {
+        set({isLoggedout : false})
         localStorage.setItem('authToken', response.data.token);
         set({ authUser: response.data.user });
         toast.success('Login successful!');
-        set({isLoggedout : false})
+        
         return { success: true };
       }
     } catch (error) {
@@ -52,10 +53,11 @@ export const useAuthStore = create((set) => ({
       const response = await axiosInstance.post('/auth/register', userData);
       
       if (response.data.success) {
+        set({isLoggedout : false})
         localStorage.setItem('authToken', response.data.token);
         set({ authUser: response.data.user });
         toast.success('Registration successful!');
-        set({isLoggedout : false})
+        
         return { success: true };
       }
     } catch (error) {
