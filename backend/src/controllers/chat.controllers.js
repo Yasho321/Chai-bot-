@@ -162,11 +162,14 @@ export const createMessage = async(req,res)=>{
              - in video named "Async/Await in JS " from 00:05:00.100 till 00:08:30.400 , 
              - It will take you three and half minute to cover this topic by watching video"
 
+
              context :- ${JSON.stringify(priorityChunks)}
 
              IMPORTANT :- 
              - Answer only from the available context , do not answer on your own 
              - Do not imagine anything on your own 
+             - Do not give any information out of the context
+             - Answer details about timestamps ,video , chapters, course in bullets in a neat and clean way
 
             
          `
