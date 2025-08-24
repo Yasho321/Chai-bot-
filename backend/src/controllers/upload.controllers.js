@@ -15,7 +15,7 @@ import Chapter from '../models/chapter.models.js';
 
 export const uploadVtts = async (req,res)=>{
     try {
-        const {courseId , chapterId} = req.body;
+        const {courseId , chapterId} = req.params;
         const uploadedVTTS = req.files; 
         if (!uploadedVTTS || uploadedVTTS.length === 0) {
             return res.status(400).json({

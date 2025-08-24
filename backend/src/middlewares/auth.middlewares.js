@@ -47,5 +47,22 @@ export const isLoggedIn = async (req, res, next) =>{
 
 }
 export const isAdmin = async(req,res,next)=>{
-
+    try {
+        const user = req.user ; 
+        if (user.role ==="admin"){
+            next()
+        }else{
+            return res.status(400).json({
+                success:false , 
+                message : "unauthorized"
+            })
+        }
+        
+    } catch (error) {
+        return res.status(500).json({
+            success:false ,
+            message: "Internal error while authenticating admin"
+        })
+        
+    }
 }

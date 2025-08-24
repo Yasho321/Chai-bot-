@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const courseSchema = new Schema({
   title: { type: String, required: true },
-  chapters: [{ type: Schema.Types.ObjectId, ref: "Chapter" }],
+  
 }, { timestamps: true });
 
 const Course = mongoose.model("Course", courseSchema);

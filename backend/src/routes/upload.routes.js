@@ -9,7 +9,7 @@ import { uploadMany } from '../utils/multer.js';
 const router = Router();
 
 
-router.post("/video/:chapter/:course", isLoggedIn,isAdmin, uploadMany,uploadVtts)
+router.post("/video/:chapterId/:courseId", isLoggedIn,isAdmin, uploadMany,uploadVtts)
 
 
 

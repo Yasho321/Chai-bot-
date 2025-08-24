@@ -38,7 +38,7 @@ app.use("/api/v1/auth",authRoutes );
 app.use("/api/v1/upload",uploadRoutes)
 app.use("/api/v1/chat",chatRouter)
 app.use("/api/v1/course",courseRoutes)
-app.use("/app/v1/chapter",chapterRoutes)
+app.use("/api/v1/chapter",chapterRoutes)
 
 
 
