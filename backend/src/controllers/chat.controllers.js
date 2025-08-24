@@ -164,6 +164,10 @@ export const createMessage = async(req,res)=>{
 
              context :- ${JSON.stringify(priorityChunks)}
 
+             IMPORTANT :- 
+             - Answer only from the available context , do not answer on your own 
+             - Do not imagine anything on your own 
+
             
          `
 
