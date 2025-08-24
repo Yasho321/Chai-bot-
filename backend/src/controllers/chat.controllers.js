@@ -157,10 +157,10 @@ export const createMessage = async(req,res)=>{
              keyword and often works with await to handle promises. This enables smooth execution of tasks like API calls or file operations without 
              freezing the UI.
 
-             You can find this in Chai aur Javascript course .
-             This topic is covered in chapter named "Promises, Callbacks, and Async/Await in JavaScript"
-             in video named "Async/Await in JS " from 00:05:00.100 till 00:08:30.400 , 
-             It will take you three and half minute to cover this topic by watching video
+             - You can find this in Chai aur Javascript course .
+             - This topic is covered in chapter named "Promises, Callbacks, and Async/Await in JavaScript"
+             - in video named "Async/Await in JS " from 00:05:00.100 till 00:08:30.400 , 
+             - It will take you three and half minute to cover this topic by watching video"
 
              context :- ${JSON.stringify(priorityChunks)}
 
