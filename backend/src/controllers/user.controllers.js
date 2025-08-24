@@ -62,7 +62,7 @@ export const register = async (req, res) => {
             expires: new Date(Date.now() + 7 * 24 * 60 * 60*1000),
              secure : true,
             sameSite : "None",
-            domain : ".vercel.app"
+            
         }
 
         res.cookie("token", token , cookiesOption);
@@ -131,7 +131,7 @@ export const login = async (req, res) => {
             expires: new Date(Date.now() + 7 * 24 * 60 * 60*1000),
             secure : true,
             sameSite : "None",
-            domain : ".vercel.app"
+            
         }
 
         res.cookie("token", token , cookiesOption);
@@ -194,7 +194,7 @@ export const logout = async (req, res) => {
             expires: new Date(Date.now() + 7 * 24 * 60 * 60*1000),
              secure : true,
             sameSite : "None",
-            domain : ".vercel.app"
+           
         }
         
         res.clearCookie("token",cookiesOption);
