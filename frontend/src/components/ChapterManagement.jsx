@@ -64,7 +64,8 @@ const ChapterManagement = () => {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="flex-1 overflow-y-auto">
+        <div className="p-6 space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -76,7 +77,7 @@ const ChapterManagement = () => {
         
         <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-glow transition-shadow">
+            <Button className="bg-primary hover:shadow-glow transition-shadow">
               <Plus className="h-4 w-4 mr-2" />
               Create Chapter
             </Button>
@@ -185,6 +186,7 @@ const ChapterManagement = () => {
             </div>
           </Card>
         ) : (
+            <ScrollArea className="max-h-[65vh]">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {chapters.map((chapter) => (
               <Card key={chapter._id} className="hover:shadow-md transition-shadow">
@@ -232,8 +234,10 @@ const ChapterManagement = () => {
               </Card>
             ))}
           </div>
+          </ScrollArea>
         )}
       </div>
+    </div>
     </div>
   );
 };

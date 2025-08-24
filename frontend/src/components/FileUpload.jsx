@@ -191,7 +191,7 @@ const FileUpload = () => {
               <div className="space-y-4">
                 <div className="relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-2xl blur-lg opacity-20"></div>
-                  <div className="relative bg-gradient-to-r from-primary to-primary-glow p-4 rounded-2xl">
+                  <div className="relative bg-primary p-4 rounded-2xl">
                     <Upload className="h-8 w-8 text-primary-foreground mx-auto" />
                   </div>
                 </div>
@@ -291,7 +291,7 @@ const FileUpload = () => {
           <Button
             onClick={handleUpload}
             disabled={!selectedFiles.length || !selectedChapterId || !selectedCourseId || isLoading}
-            className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-glow transition-shadow"
+            className="bg-primary hover:shadow-glow transition-shadow"
           >
             {isLoading ? (
               <>

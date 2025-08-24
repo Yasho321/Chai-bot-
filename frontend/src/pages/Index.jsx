@@ -23,11 +23,11 @@ const Index = () => {
         <div className="text-center space-y-4">
           <div className="relative inline-block">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-2xl blur-lg opacity-30 animate-pulse"></div>
-            <div className="relative bg-gradient-to-r from-primary to-primary-glow p-6 rounded-2xl">
+            <div className="relative bg-primary p-6 rounded-2xl">
               <div className="h-8 w-8 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin mx-auto"></div>
             </div>
           </div>
-          <p className="text-muted-foreground">Loading VTT Buddy...</p>
+          <p className="text-muted-foreground">Loading Chai Bot...</p>
         </div>
       </div>);
 };

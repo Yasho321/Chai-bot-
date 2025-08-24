@@ -1,7 +1,7 @@
 import { useAuthStore } from '../stores/authStore';
 import { useThemeStore } from '../stores/themeStore';
 import { Button } from './ui/button';
-import { Moon, Sun, LogOut, User, Bot } from 'lucide-react';
+import { Moon, Sun, LogOut, User, Coffee } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,15 +24,15 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-lg blur-sm opacity-50"></div>
-            <div className="relative bg-gradient-to-r from-primary to-primary-glow p-2 rounded-lg">
-              <Bot className="h-6 w-6 text-primary-foreground" />
+            <div className="relative bg-primary   p-2 rounded-lg">
+              <Coffee className="h-6 w-6 text-primary-foreground" />
             </div>
           </div>
           <div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-              VTT Buddy
+            <h1 className="text-xl font-bold bg-primary bg-clip-text text-transparent">
+              Chai Bot
             </h1>
-            <p className="text-xs text-muted-foreground">AI Learning Assistant</p>
+            <p className="text-xs text-muted-foreground">Chai Code Learning Guide</p>
           </div>
         </div>
 

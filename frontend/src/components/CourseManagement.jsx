@@ -45,7 +45,8 @@ const CourseManagement = () => {
   };
 
   return (
-    <div className="p-6 space-y-6">
+    <div className="flex-1 overflow-y-auto">
+        <div className="p-6 space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
@@ -57,7 +58,7 @@ const CourseManagement = () => {
         
         <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
           <DialogTrigger asChild>
-            <Button className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-glow transition-shadow">
+            <Button className="bg-primary hover:shadow-glow transition-shadow">
               <Plus className="h-4 w-4 mr-2" />
               Create Course
             </Button>
@@ -144,6 +145,7 @@ const CourseManagement = () => {
             </div>
           </Card>
         ) : (
+             <ScrollArea className="max-h-[65vh]">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {courses.map((course) => (
               <Card key={course._id} className="hover:shadow-md transition-shadow">
@@ -182,8 +184,10 @@ const CourseManagement = () => {
               </Card>
             ))}
           </div>
+          </ScrollArea>
         )}
       </div>
+    </div>
     </div>
   );
 };

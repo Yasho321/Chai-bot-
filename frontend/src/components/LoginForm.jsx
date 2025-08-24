@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Eye, EyeOff, Bot, Mail, Lock } from 'lucide-react';
+import { Eye, EyeOff, Coffee, Mail, Lock } from 'lucide-react';
 
 const LoginForm = ({ onToggleMode }) => {
   const [formData, setFormData] = useState({
@@ -36,14 +36,14 @@ const LoginForm = ({ onToggleMode }) => {
         <div className="text-center mb-8">
           <div className="relative inline-block">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-2xl blur-lg opacity-30"></div>
-            <div className="relative bg-gradient-to-r from-primary to-primary-glow p-4 rounded-2xl">
-              <Bot className="h-12 w-12 text-primary-foreground mx-auto" />
+            <div className="relative bg-primary p-4 rounded-2xl">
+              <Coffee className="h-12 w-12 text-primary-foreground mx-auto" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold mt-4 bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-            VTT Buddy
+          <h1 className="text-3xl font-bold mt-4 bg-primary p-4 bg-clip-text text-transparent">
+            Chai Bot
           </h1>
-          <p className="text-muted-foreground mt-2">AI Learning Assistant</p>
+          <p className="text-muted-foreground mt-2">Chai Code Learning Assistant & Guide</p>
         </div>
 
         <Card className="border-border shadow-xl">
@@ -104,7 +104,7 @@ const LoginForm = ({ onToggleMode }) => {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary to-primary-glow hover:shadow-glow transition-shadow"
+                className="w-full bg-primary p-4"
                 disabled={isLoading}
               >
                 {isLoading ? 'Signing in...' : 'Sign in'}

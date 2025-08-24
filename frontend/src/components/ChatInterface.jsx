@@ -4,7 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
 import { Card } from './ui/card';
-import { Send, Bot, User, Loader2 } from 'lucide-react';
+import { Send, Coffee, User, Loader2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
@@ -37,8 +37,8 @@ const ChatInterface = () => {
         <div className="flex-shrink-0">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-sm opacity-30"></div>
-            <div className="relative bg-gradient-to-r from-primary to-primary-glow p-2 rounded-full">
-              <Bot className="h-4 w-4 text-primary-foreground" />
+            <div className="relative bg-primary  p-2 rounded-full">
+              <Coffee className="h-4 w-4 text-primary-foreground" />
             </div>
           </div>
         </div>
@@ -121,14 +121,14 @@ const ChatInterface = () => {
         <div className="flex items-center gap-3">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-sm opacity-30"></div>
-            <div className="relative bg-gradient-to-r from-primary to-primary-glow p-2 rounded-full">
-              <Bot className="h-5 w-5 text-primary-foreground" />
+            <div className="relative bg-primary  p-2 rounded-full">
+              <Coffee className="h-5 w-5 text-primary-foreground" />
             </div>
           </div>
           <div>
-            <h2 className="font-semibold">VTT Buddy</h2>
+            <h2 className="font-semibold">Chai Bot</h2>
             <p className="text-sm text-muted-foreground">
-              Ask me anything about your courses
+              Ask me anything about your courses of Chai aur Code
             </p>
           </div>
         </div>
@@ -142,14 +142,13 @@ const ChatInterface = () => {
             <div className="text-center py-12">
               <div className="relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-2xl blur-lg opacity-20"></div>
-                <div className="relative bg-gradient-to-r from-primary to-primary-glow p-6 rounded-2xl">
-                  <Bot className="h-12 w-12 text-primary-foreground mx-auto" />
+                <div className="relative bg-primary  p-6 rounded-2xl">
+                  <Coffee className="h-12 w-12 text-primary-foreground mx-auto" />
                 </div>
               </div>
               <h3 className="text-lg font-semibold mt-4 mb-2">Welcome to VTT Buddy!</h3>
               <p className="text-muted-foreground max-w-md mx-auto">
-                I'm your AI learning assistant. Ask me questions about your courses, 
-                and I'll help you learn from the uploaded VTT content.
+                I'm your AI learning assistant & guide. I will help you guide through Courses of Chai aur Code
               </p>
               <div className="mt-6 text-sm text-muted-foreground">
                 <p>Try asking:</p>
@@ -176,14 +175,14 @@ const ChatInterface = () => {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow rounded-full blur-sm opacity-30"></div>
                   <div className="relative bg-gradient-to-r from-primary to-primary-glow p-2 rounded-full">
-                    <Bot className="h-4 w-4 text-primary-foreground" />
+                    <Coffee className="h-4 w-4 text-primary-foreground" />
                   </div>
                 </div>
               </div>
               <Card className="p-4 bg-chat-assistant text-chat-assistant-foreground">
                 <div className="flex items-center gap-2">
                   <Loader2 className="h-4 w-4 animate-spin" />
-                  <span className="text-sm">VTT Buddy is thinking...</span>
+                  <span className="text-sm">Chai Bot is thinking...</span>
                 </div>
               </Card>
             </div>
@@ -207,7 +206,7 @@ const ChatInterface = () => {
           <Button
             type="submit"
             disabled={!inputMessage.trim() || isLoading}
-            className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-glow transition-shadow"
+            className="bg-primary hover:shadow-glow transition-shadow"
           >
             {isLoading ? (
               <Loader2 className="h-4 w-4 animate-spin" />
