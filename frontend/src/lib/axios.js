@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-  baseURL: 'https://chai-bot-m9jr.onrender.com/api/v1',
+  baseURL: 'https://chai-bot-xghk.onrender.com/api/v1',
   withCredentials: true,
 });
 
